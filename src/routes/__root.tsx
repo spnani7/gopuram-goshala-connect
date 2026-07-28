@@ -11,6 +11,12 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LanguageProvider } from "@/lib/i18n";
+import { CartProvider } from "@/lib/cart";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { CartDrawer } from "@/components/CartDrawer";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 function NotFoundComponent() {
   return (
@@ -77,14 +83,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Sri Ranganatha Goshala — Nellore | Sacred Desi Cow Sanctuary" },
+      { name: "description", content: "Sri Ranganatha Goshala in Nellore serves Lord Ranganatha through A2 milk seva, protection of old desi cows, natural farming and daily dharma teachings." },
+      { name: "author", content: "Sri Ranganatha Goshala" },
+      { property: "og:title", content: "Sri Ranganatha Goshala — Nellore" },
+      { property: "og:description", content: "A sacred desi cow sanctuary at the feet of Lord Ranganatha Swami — A2 milk, panchagavya, organic food and natural farming." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -119,8 +124,17 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <LanguageProvider>
+        <CartProvider>
+          <div className="flex min-h-screen flex-col bg-background">
+            <Header />
+            <main className="flex-1"><Outlet /></main>
+            <Footer />
+            <CartDrawer />
+            <LanguageToggle floating />
+          </div>
+        </CartProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
