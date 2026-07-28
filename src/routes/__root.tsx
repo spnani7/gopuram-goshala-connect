@@ -86,10 +86,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Sri Ranganatha Goshala — Nellore | Sacred Desi Cow Sanctuary" },
       { name: "description", content: "Sri Ranganatha Goshala in Nellore serves Lord Ranganatha through A2 milk seva, protection of old desi cows, natural farming and daily dharma teachings." },
       { name: "author", content: "Sri Ranganatha Goshala" },
-      { property: "og:title", content: "Sri Ranganatha Goshala — Nellore" },
-      { property: "og:description", content: "A sacred desi cow sanctuary at the feet of Lord Ranganatha Swami — A2 milk, panchagavya, organic food and natural farming." },
+      { property: "og:title", content: "Sri Ranganatha Goshala — Nellore | Sacred Desi Cow Sanctuary" },
+      { property: "og:description", content: "Sri Ranganatha Goshala in Nellore serves Lord Ranganatha through A2 milk seva, protection of old desi cows, natural farming and daily dharma teachings." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Sri Ranganatha Goshala — Nellore | Sacred Desi Cow Sanctuary" },
+      { name: "twitter:description", content: "Sri Ranganatha Goshala in Nellore serves Lord Ranganatha through A2 milk seva, protection of old desi cows, natural farming and daily dharma teachings." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a030b84-967f-4775-bdb4-4346c1e88b17/id-preview-31092cd6--1fbf493c-22ac-474c-9a97-a7035397316f.lovable.app-1785242714439.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a030b84-967f-4775-bdb4-4346c1e88b17/id-preview-31092cd6--1fbf493c-22ac-474c-9a97-a7035397316f.lovable.app-1785242714439.png" },
     ],
     links: [
       {
